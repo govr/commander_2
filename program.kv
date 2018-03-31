@@ -1,0 +1,40 @@
+<LoginScreen>:
+    cols: 1
+    rows: 2
+
+    canvas.before:
+        Color:
+            rgba: 0.54, 0.54, 0.54, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    GridLayout:
+        cols: 2
+        rows: 2
+
+        Label:
+            text: 'Login'
+        BoxLayout:
+            TextInput:
+                id: username
+                multiline: False
+                text: 'radian'
+                size_hint_y: 0.4
+                pos_hint: {'center_y': .5}
+
+        Label:
+            text: 'Password'
+        BoxLayout:
+            TextInput:
+                id: password
+                password: True
+                size_hint_y: 0.4
+                pos_hint: {'center_y': .5}
+
+    BoxLayout:
+        Button:
+            size_hint_y: 0.3
+            pos_hint: {'bottom': 1}
+            text: 'Zaloguj się'
+            on_press:root.click(username.text,password.text)
